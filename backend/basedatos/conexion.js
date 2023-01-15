@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const conexion = async () => {
 
-  //? Tuve que añadir esta línea porque el modo estricto me daba error
+  //? Desactivar modo estricto
   mongoose.set("strictQuery", false);
 
   try {
@@ -14,15 +14,13 @@ const conexion = async () => {
     // useUnifiedTopology: true
     // useCreateIndex: true
 
-    console.log("Conectado correctamente a la base de datos mi_blog !!");
+    console.log("Conectado correctamente a la base de datos mi_blog!");
 
   } catch (error) {
     console.log(error);
-    throw new Error("No se ha podido conectar a la base de datos !!");
+    throw new Error("No se ha podido conectar a la base de datos!");
   }
 
 }
 
-module.exports = {
-  conexion
-}
+module.exports = { conexion };
